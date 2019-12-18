@@ -26,7 +26,7 @@ class Cafe:
         to the price argument.
         """
         ###############YOUR CODE HERE#############
-        pass
+        self.menu[item] = price
         ##################END CODE################
 
     def add_stock(self, newstock):
@@ -38,7 +38,11 @@ class Cafe:
         a key in the cafe stock that represents that item, and add the corresponding number in newstock to it.
         """
         ###############YOUR CODE HERE#############
-        pass
+        for key in newstock:
+            if key in self.stock.keys():
+                self.stock[key] = self.stock[key] + newstock[key]
+            else:
+                self.stock[key] = newstock[key]
         ##################END CODE################
 
 
@@ -51,7 +55,13 @@ class Cafe:
         in the order that are not in the cafe menu, return the string 'Not for sale' instead.
         """
         ###############YOUR CODE HERE#############
-        pass
+        cost = 0
+        for key, value in order.items():
+            if key in self.menu.keys():
+                cost += self.menu[key] * value
+            else:
+                print(key, 'Not for sale')
+        print('Total Cost = $' , cost)
         ##################END CODE################
 
 
@@ -67,7 +77,15 @@ class Cafe:
         case, running self.order_cost(order) will get you the value returned in the order_cost method.
         """
         ###############YOUR CODE HERE#############
-        pass
+        for key, value in order.items():
+            if key in self.stock.keys():
+                if value >= self.stock[key]:
+                    pass
+                else:
+                    return False
+            else:
+                return False
+            self.add_stock(-order)
         ##################END CODE################
 
 
@@ -78,6 +96,17 @@ if __name__ == '__main__':
     It will not be run by importing this file to another program. An example of a Cafe instance is given here. This part is not graded though.
     """
     sbux = Cafe({'coffee':2,'mocha':3,'bagel':2.5}, {'coffee':10, 'mocha':5, 'bagel':7, 'tea':20})
+
     #########CREATE TEST CASES HERE###########
-    pass
+    print(sbux.menu)
+    print(sbux.stock)
+    print(sbux.money)
+    sbux.add_menu_item('orange', 5)
+    print(sbux.menu)
+    stock = {'coffee':10, 'mocha':5, 'bagel':7, 'tea':20}
+    newstock = {'coffee':3, 'mocha':1, 'tea':2,'orange':25, 'biscuit':7}
+    order = {'coffee':6, 'mocha':1, 'orange':1}
+    sbux.add_stock(newstock)
+    print(sbux.stock)
+    sbux.order_cost(order)
     ##########END TEST CASES##################

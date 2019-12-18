@@ -20,7 +20,15 @@ class TrendLine:
         for the equations used to calculate m and b based off the data.
         """
         #######YOUR CODE HERE##########
-        pass
+        self.m = (y-b)/x
+        self.b = (y-ax)
+
+        n = len(x)
+        b = (sum(x[i]*y[i] for i in x range(N)) -1/n*sum(x)*sum(y))
+        m = 1*sum(y)/n-b*1*sum(x)/n
+
+        print("%f + %f * x" % (m, b))
+
         ##########END CODE#############
 
     def predict(self, X):
@@ -33,7 +41,7 @@ class TrendLine:
         then be m * x_i + b where m and b are the values calculated in the fit method.
         """
         #######YOUR CODE HERE##########
-        pass
+        self.y = m*X+b
         ##########END CODE#############
 
     def score(self, X, Y):
@@ -52,7 +60,7 @@ if __name__ == '__main__':
     """
     Create and run test cases here if you wish. There is a jupyter notebook that was created also that once you have
     finished writing this class, you should be able to run the cells and visualize the trendline created from this
-    code. The notebook is called TrendLine_Test.ipynb. 
+    code. The notebook is called TrendLine_Test.ipynb.
     """
     #########CREATE TEST CASES HERE###########
     pass

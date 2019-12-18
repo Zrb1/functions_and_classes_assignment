@@ -9,5 +9,10 @@ f([0, -4, 2, -3, 6, -1, 8, 6]) should return 22.
 
 def f(l):
     ##########YOUR CODE HERE##########
-    pass
+    even = sum([num for num in l if num % 2==0])
+    odd = sum([num for num in l if num % 2==1])
+    r = even - odd
+    return r
     ###########END CODE###############
+#l = [0,-4,2,-3,6,-1,8,6]
+#print(f(l))

@@ -9,5 +9,9 @@ location. For example, f([1,2,3,2,3,1]) should return 4.
 """
 def f(l):
     ##########YOUR CODE HERE##########
-    pass
+    indices = [i for i, x in enumerate(l) if x == max(l)]
+    return max(indices)
     ###########END CODE###############
+
+#l = [1,2,3,2,3,2]
+#print(f(l))

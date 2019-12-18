@@ -13,5 +13,15 @@ Note that the order of the key value pairs in the resulting dictionary does not 
 
 def f(s):
     ##########YOUR CODE HERE##########
-    pass
+    for char in ',.?!:";-''\n':
+        s = s.replace(char,' ')
+    s = s.lower()
+
+    words = s.split()
+
+    ds = {}
+    for word in words:
+        ds[word] = ds.get(word, 0) + 1
+
+    return ds
     ###########END CODE###############
