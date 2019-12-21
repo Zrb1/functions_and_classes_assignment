@@ -8,9 +8,10 @@ and then create a score that tells us how well the trendline fits to our data. N
 is no __init__ method. There only needs to be one if there is code that needs to be run when an instance of the
 class is initialized. Fill in the three methods below according to what they are supposed to do.
 """
+import numpy as np
 
 class TrendLine:
-    import numpy as np
+
     def fit(self, X, Y):
         """
         This function takes 2 lists as inputs, X and Y. X is the X values of the datapoints and Y is the y values
@@ -24,8 +25,8 @@ class TrendLine:
         x = np.array(X)
         y = np.array(Y)
 
-        self.m = (len(x) *np.sum(x*y) -np.sum(x, axis=0)*np.sum(y, axis=0))/(len(x)*np.sum(x**2) - np.sum(x)**2)
-        self.b = (np.sum(y) - self.m*np.sum(x))/len(x)
+        self.m = (len(x) * np.sum(x*y) - np.sum(x, axis=0) * np.sum(y, axis=0)) / (len(x) * np.sum(x**2) - np.sum(x)**2)
+        self.b = (np.sum(y) - self.m * np.sum(x)) / len(x)
         return self
         ##########END CODE#############
 
@@ -72,6 +73,7 @@ if __name__ == '__main__':
     x_hat = [1.5,2.5]
 
     model = TrendLine().fit(X,Y)
+    model
     model.predict(x_hat)
     model.score(X,Y)
     ##########END TEST CASES##################
