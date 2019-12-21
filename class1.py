@@ -65,6 +65,7 @@ class Cafe:
         ##################END CODE################
 
 
+
     def place_order(self, order):
         """
         This function should take in an order as an input, and process that order. The order argument will be a dictionary where the keys
@@ -80,14 +81,11 @@ class Cafe:
         for key, value in order.items():
             if key in self.stock.keys():
                 if value >= self.stock[key]:
-                    pass
-                else:
                     return False
-            else:
-                return False
-            self.add_stock(-order)
+                else:
+                    self.add_stock(-order)
+                    return True
         ##################END CODE################
-
 
 if __name__ == '__main__':
     """
