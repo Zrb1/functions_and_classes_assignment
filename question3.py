@@ -16,11 +16,10 @@ return None, None.
 
 def f(x1, y1, x2, y2):
     ##########YOUR CODE HERE##########
-    m = (y2-y1)/(x2-x2)
-    b = y-x((y2-y1)/(x2-x1))
-
-    return m, b
-    if m = 0
-        return 'None, none.'
+    if  (x2-x1) == 0:
+        return ('None, none.')
+    else:
+        m = (y2-y1)/(x2-x1)
+        b = (y1)-(x1)*((y2-y1)/(x2-x1))
+        return m, b
     ###########END CODE###############
-#print('y=%dx+%d' & m, b)

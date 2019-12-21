@@ -14,5 +14,3 @@ def f(l):
     r = even - odd
     return r
     ###########END CODE###############
-#l = [0,-4,2,-3,6,-1,8,6]
-#print(f(l))

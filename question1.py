@@ -12,6 +12,3 @@ def f(l):
     indices = [i for i, x in enumerate(l) if x == max(l)]
     return max(indices)
     ###########END CODE###############
-
-#l = [1,2,3,2,3,2]
-#print(f(l))

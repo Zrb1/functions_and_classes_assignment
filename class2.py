@@ -20,14 +20,10 @@ class TrendLine:
         for the equations used to calculate m and b based off the data.
         """
         #######YOUR CODE HERE##########
-        self.m = (y-b)/x
-        self.b = (y-ax)
-
-        n = len(x)
-        b = (sum(x[i]*y[i] for i in x range(N)) -1/n*sum(x)*sum(y))
-        m = 1*sum(y)/n-b*1*sum(x)/n
-
-        print("%f + %f * x" % (m, b))
+            xavg = X.mean()
+            self.m = (Y*(x-xavg)).sum()/(X*(x-xavg)).sum()
+            self.b = Y.mean()-self.m*xavg
+            return self
 
         ##########END CODE#############
 
@@ -41,7 +37,8 @@ class TrendLine:
         then be m * x_i + b where m and b are the values calculated in the fit method.
         """
         #######YOUR CODE HERE##########
-        self.y = m*X+b
+        y = self.m*X + self.b
+        return y
         ##########END CODE#############
 
     def score(self, X, Y):
@@ -53,7 +50,7 @@ class TrendLine:
         calculate the r^2 score. (It is 1 - SS_res/SS_tot)
         """
         #######YOUR CODE HERE##########
-        pass
+
         ##########END CODE#############
 
 if __name__ == '__main__':

@@ -12,5 +12,13 @@ See https://www.pythonforbeginners.com/files/reading-and-writing-files-in-python
 
 def f(path):
     ##########YOUR CODE HERE##########
-    pass
-    ###########END CODE###############
+    def f(path):
+        with open(path) as afile:
+            x=[]
+            for i in afile:
+                i=i.strip().split(" ,")
+                x.append(i)
+            return x
+    ###########END CDE###############
+
+#path = '/home/zacharyraymond-becker/Documents/paloaltoinsight/Highoutputpython/assigment/functions_and_classes_assignment/test_text.txt'
