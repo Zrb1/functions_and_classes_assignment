@@ -13,5 +13,7 @@ subdirectories. Return your list sorted in alphabetical order.
 
 def f(path):
     ##########YOUR CODE HERE##########
-
+    for root, dirs, files in os.walk(path):
+        for filename in files:
+            return [files]
     ###########END CODE###############
